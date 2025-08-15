@@ -1,0 +1,29 @@
+{
+  "name": "SmartCalc+ Mobile",
+  "short_name": "SmartCalc+",
+  "description": "Native mobile academic calculator and resource platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#1a202c",
+  "orientation": "portrait",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    { "src": "/icons/smartcalc-logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/smartcalc-logo-1024.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Calculator",
+      "short_name": "Calculate", 
+      "url": "/calculs/L1",
+      "icons": [{ "src": "/icons/smartcalc-logo-512.png", "sizes": "512x512" }]
+    },
+    {
+      "name": "Drives",
+      "short_name": "Resources",
+      "url": "/drives", 
+      "icons": [{ "src": "/icons/smartcalc-logo-512.png", "sizes": "512x512" }]
+    }
+  ]
+}

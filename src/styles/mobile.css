@@ -1,0 +1,123 @@
+/* Mobile-specific styles for APK version */
+
+/* Prevent overscroll and bounce effects */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Home page - prevent scrolling */
+.home-container {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  touch-action: none;
+  user-select: none;
+}
+
+.fixed-center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  pointer-events: auto;
+}
+
+/* Contact page - prevent horizontal scroll */
+.contact-container {
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-y: auto;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.contact-grid {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.contact-link-text {
+  font-size: 0.75rem;
+  word-break: break-all;
+}
+
+.contact-form {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.contact-form input,
+.contact-form textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Improved mobile navigation */
+.mobile-navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: hsl(var(--background) / 0.95);
+}
+
+.mobile-safe-area {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Better button styling for mobile */
+.native-button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Mobile fullscreen modals */
+.mobile-fullscreen-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  border: none !important;
+}
+
+@media (min-width: 640px) {
+  .mobile-fullscreen-modal {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 32rem !important;
+    max-height: none !important;
+    margin: auto !important;
+    border-radius: 0.5rem !important;
+    transform: translate(-50%, -50%) !important;
+    border: 1px solid hsl(var(--border)) !important;
+  }
+}
+
+/* Fix for long text in small screens */
+@media (max-width: 380px) {
+  .contact-link-text {
+    font-size: 0.6rem;
+  }
+}
